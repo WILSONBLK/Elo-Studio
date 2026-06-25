@@ -7,18 +7,14 @@
   border-radius: 1px; position: relative; overflow: hidden; display: flex; align-items: flex-end;
 }
 
-.portraitPattern {
-  position: absolute; inset: 0;
-  background-image: repeating-linear-gradient(45deg, var(--border-dark) 0, var(--border-dark) 1px, transparent 1px, transparent 52px);
-  opacity: .5;
+.portraitImg {
+  object-fit: cover;
+  object-position: center 15%;
+  transform: scale(1.12);
+  transform-origin: center 20%;
+  transition: transform .6s ease;
 }
-
-.portraitInitial {
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -58%);
-  font-family: 'DM Serif Display', serif; font-size: 14rem; line-height: 1;
-  color: rgba(45,122,82,.06); user-select: none; pointer-events: none;
-}
+.portrait:hover .portraitImg { transform: scale(1.16); }
 
 .portraitOverlay {
   position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
@@ -33,7 +29,7 @@
 }
 
 .portraitRole {
-  font-family: 'DM Mono', monospace; font-size: .58rem;
+  font-family: 'DM Mono', monospace; font-size: .72rem;
   letter-spacing: .15em; text-transform: uppercase; color: var(--green-sage);
 }
 
@@ -64,7 +60,7 @@
 }
 
 .statLabel {
-  font-family: 'DM Mono', monospace; font-size: .55rem;
+  font-family: 'DM Mono', monospace; font-size: .72rem;
   letter-spacing: .12em; text-transform: uppercase; color: var(--th-subtle);
 }
 

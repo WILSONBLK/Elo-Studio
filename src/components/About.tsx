@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styles from './About.module.css'
 
 export default function About() {
@@ -7,8 +8,14 @@ export default function About() {
         <div className={styles.split}>
           <div className="reveal">
             <div className={styles.portrait}>
-              <div className={styles.portraitPattern} />
-              <div className={styles.portraitInitial}>E</div>
+              <Image
+                src="/founder.jpg"
+                alt="Elo, Founder of Elo's Studio"
+                fill
+                className={styles.portraitImg}
+                sizes="(max-width: 1024px) 90vw, 50vw"
+                priority
+              />
               <div className={styles.portraitOverlay} />
               <div className={styles.portraitFooter}>
                 <div className={styles.portraitName}>Elo</div>
