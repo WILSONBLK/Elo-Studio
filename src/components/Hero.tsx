@@ -30,7 +30,7 @@ export default function Hero() {
           </p>
           <div className={`${styles.actions} reveal reveal-d3`}>
             <div className={styles.btnRow}>
-              <a href="#cta" className="btn btn-primary">
+              <a href="https://wa.me/2348143154972" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 Book a Discovery Call
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
