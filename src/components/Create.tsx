@@ -1,0 +1,59 @@
+import styles from './Create.module.css'
+
+const items = [
+  { title: 'Digital Storytelling Websites', desc: 'Full websites built around your narrative — your why, your journey, your philosophy, your work.' },
+  { title: 'Founder Profiles', desc: 'Digital presences built for the person — for executives, consultants, and thought leaders.' },
+  { title: 'Brand Narratives', desc: 'The articulation of what a brand believes, how it began, and why it exists.' },
+  { title: 'Project Showcases', desc: 'Portfolio and case study systems that show the story behind the work, not just the outcome.' },
+  { title: 'Company Timelines', desc: 'Visual histories of how a company evolved — a powerful trust-building tool.' },
+  { title: 'Digital Portfolios', desc: 'Curated presentations of creative and professional work — designed with intention.' },
+  { title: 'Trust-Building Content Systems', desc: 'Editorial systems — blogs, insights, articles — that communicate expertise over time.' },
+]
+
+export default function Create() {
+  return (
+    <section id="create" className={styles.section}>
+      <div className="container">
+        <div className={styles.grid}>
+          <div>
+            <span className="label reveal">What We Create</span>
+            <h2 className="section-title reveal reveal-d1">
+              Digital Experiences<br />Rooted in<br /><em>Truth &amp; Identity.</em>
+            </h2>
+            <div className="rule reveal reveal-d1" />
+            <p className="body-p reveal reveal-d2" style={{ marginBottom: '2.5rem' }}>
+              Every deliverable is built from the inside out — starting with who you are, and
+              working outward to how you're perceived.
+            </p>
+
+            <div className={styles.list}>
+              {items.map((item, i) => (
+                <div key={i} className={`${styles.item} reveal${i % 3 === 1 ? ' reveal-d1' : i % 3 === 2 ? ' reveal-d2' : ''}`}>
+                  <span className={styles.num}>0{i + 1}</span>
+                  <div>
+                    <div className={styles.name}>{item.title}</div>
+                    <p className={styles.desc}>{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className={`${styles.sidebar} reveal reveal-d2`}>
+            <div className={styles.visual}>
+              <div className={styles.pattern} />
+              <div className={styles.glow} />
+              <div className={styles.visualText}>
+                <div className={styles.quote}>
+                  "Every business has a remarkable story. Most just haven't found the right way to
+                  tell it yet."
+                </div>
+                <div className={styles.attr}>— Elo's Studio</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

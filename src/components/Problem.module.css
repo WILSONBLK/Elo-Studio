@@ -1,0 +1,62 @@
+.section { background: var(--th-bg); }
+
+.grid {
+  display: grid; grid-template-columns: 1fr 1.25fr;
+  gap: 7rem; align-items: start;
+}
+
+.intro {
+  font-size: 1.2rem; color: var(--th-body); line-height: 1.8;
+  font-weight: 300; max-width: 46ch; margin: 2rem 0 3rem;
+}
+.intro strong { font-weight: 600; color: var(--th-heading); }
+
+.pairs { display: flex; flex-direction: column; gap: 0; }
+
+.pair {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border-bottom: 1px solid var(--th-border-lt);
+}
+.pair:first-child { border-top: 1px solid var(--th-border-lt); }
+
+.col { padding: 1.5rem 1.25rem 1.5rem 0; }
+.col:first-child { border-right: 1px solid var(--th-border-lt); padding-right: 1.5rem; }
+.col:last-child  { padding-left: 1.5rem; }
+.col p { font-size: .875rem; color: var(--th-muted); line-height: 1.65; }
+
+.colHead {
+  font-family: 'DM Mono', monospace; font-size: .58rem;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--th-subtle); margin-bottom: .6rem;
+}
+.colBad .colHead { color: var(--choc-warm); }
+.colHeadGood     { color: var(--green-mid) !important; }
+.goodText        { color: var(--green-dark); }
+
+[data-theme="dark"] .goodText { color: var(--green-sage); }
+
+.pullquote {
+  background: var(--always-dark-bg); color: #F5EFE6;
+  padding: 3rem; margin-top: 3.5rem; border-radius: 1px;
+  position: relative; overflow: hidden;
+}
+.pullquote::before {
+  content: '\201C'; font-family: 'DM Serif Display', serif;
+  font-size: 8rem; line-height: 1; color: rgba(45,122,82,.12);
+  position: absolute; top: -1rem; left: 1.5rem; pointer-events: none;
+}
+.pullquote blockquote {
+  font-family: 'DM Serif Display', serif; font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.6;
+  color: #F5EFE6; position: relative; z-index: 1;
+}
+.pullquote cite {
+  display: block; margin-top: 1.25rem;
+  font-family: 'DM Mono', monospace; font-size: .58rem;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--green-sage); font-style: normal;
+}
+
+@media(max-width: 1024px) {
+  .grid { grid-template-columns: 1fr; gap: 4rem; }
+}
