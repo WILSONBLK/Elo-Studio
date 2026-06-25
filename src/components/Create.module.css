@@ -30,16 +30,16 @@
   display: flex; align-items: flex-end;
 }
 
-.pattern {
-  position: absolute; inset: 0;
-  background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(45,122,82,.06) 59px, rgba(45,122,82,.06) 60px),
-    repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(45,122,82,.06) 59px, rgba(45,122,82,.06) 60px);
+.founderImg {
+  object-fit: cover;
+  object-position: center 18%;
+  transform: scale(1.1);
+  transform-origin: center 20%;
 }
 
 .glow {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 60%;
-  background: radial-gradient(ellipse at 50% 100%, rgba(45,122,82,.18) 0%, transparent 70%);
+  position: absolute; bottom: 0; left: 0; right: 0; height: 65%;
+  background: linear-gradient(to top, rgba(20,10,4,.92) 0%, rgba(20,10,4,.4) 50%, transparent 100%);
 }
 
 .visualText { position: relative; z-index: 2; padding: 2.5rem; }

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styles from './Create.module.css'
 
 const items = [
@@ -41,7 +42,13 @@ export default function Create() {
 
           <div className={`${styles.sidebar} reveal reveal-d2`}>
             <div className={styles.visual}>
-              <div className={styles.pattern} />
+              <Image
+                src="/founder.jpg"
+                alt="Elo, Founder of Elo's Studio"
+                fill
+                className={styles.founderImg}
+                sizes="(max-width: 1024px) 90vw, 40vw"
+              />
               <div className={styles.glow} />
               <div className={styles.visualText}>
                 <div className={styles.quote}>
