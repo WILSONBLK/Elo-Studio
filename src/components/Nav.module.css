@@ -18,7 +18,7 @@
   font-size: .95rem; letter-spacing: .06em; color: var(--th-logo);
 }
 .slash { font-weight: 300; font-size: 1.2rem; color: var(--green-mid); margin: 0 .08em; }
-.sub   { font-weight: 400; font-size: .7rem; letter-spacing: .16em; color: var(--th-muted); }
+.sub   { font-weight: 400; font-size: .8rem; letter-spacing: .16em; color: var(--th-muted); }
 
 .right { display: flex; align-items: center; gap: 1.5rem; }
 

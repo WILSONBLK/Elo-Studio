@@ -11,7 +11,7 @@
 .item:first-child { border-top: 1px solid var(--th-border); }
 
 .num {
-  font-family: 'DM Mono', monospace; font-size: .6rem;
+  font-family: 'DM Mono', monospace; font-size: .74rem;
   letter-spacing: .1em; color: var(--th-subtle);
   flex-shrink: 0; padding-top: .15rem; width: 1.75rem;
 }
@@ -50,7 +50,7 @@
 }
 
 .attr {
-  font-family: 'DM Mono', monospace; font-size: .58rem;
+  font-family: 'DM Mono', monospace; font-size: .72rem;
   letter-spacing: .15em; text-transform: uppercase;
   color: var(--green-sage); margin-top: .75rem; opacity: .55;
 }

@@ -21,14 +21,14 @@
   display: flex; align-items: flex-start; justify-content: space-between;
   flex-direction: column;
 }
-.caseNum  { font-family: 'DM Mono', monospace; font-size: .6rem; letter-spacing: .15em; color: var(--th-subtle); }
-.caseYear { font-family: 'DM Mono', monospace; font-size: .6rem; letter-spacing: .1em;  color: var(--th-subtle); }
+.caseNum  { font-family: 'DM Mono', monospace; font-size: .74rem; letter-spacing: .15em; color: var(--th-subtle); }
+.caseYear { font-family: 'DM Mono', monospace; font-size: .74rem; letter-spacing: .1em;  color: var(--th-subtle); }
 
 .caseMain { padding: 3rem 2.5rem; border-right: 1px solid var(--th-border); }
 
 .tag {
   display: inline-block;
-  font-family: 'DM Mono', monospace; font-size: .58rem;
+  font-family: 'DM Mono', monospace; font-size: .72rem;
   letter-spacing: .12em; text-transform: uppercase;
   color: var(--green-mid); border: 1px solid var(--border-green);
   padding: .3rem .7rem; border-radius: 1px; margin-bottom: 1.25rem;
@@ -63,7 +63,7 @@
 }
 
 .clientType {
-  font-family: 'DM Mono', monospace; font-size: .58rem;
+  font-family: 'DM Mono', monospace; font-size: .72rem;
   letter-spacing: .12em; text-transform: uppercase;
   color: var(--th-subtle); margin-bottom: .5rem;
 }
