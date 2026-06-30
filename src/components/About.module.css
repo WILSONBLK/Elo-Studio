@@ -20,10 +20,10 @@
 
 .portraitImg {
   object-fit: cover;
-  object-position: center 15%;
-  transform: scale(1.12);
-  transform-origin: center 20%;
+  object-position: center top;
+  transform: none;
   transition: transform .6s ease;
+  filter: grayscale(1) contrast(1.4) brightness(1.08) sepia(.08);
 }
 .portrait:hover .portraitImg { transform: scale(1.16); }
 

@@ -50,7 +50,7 @@ export default function Create() {
           <div className={styles.sidebar} data-motion="scale-up" data-motion-delay="0.1">
             <div className={styles.visual}>
               <Image
-                src="/founder2.jpg"
+                src="/founder.jpg"
                 alt="Elo, Founder of Elo's Studio"
                 fill
                 className={styles.founderImg}

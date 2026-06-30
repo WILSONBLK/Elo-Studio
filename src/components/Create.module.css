@@ -43,8 +43,8 @@
 
 .founderImg {
   object-fit: cover;
-  object-position: center center;
-  filter: grayscale(1) contrast(1.18) brightness(1.06);
+  object-position: center 22%;
+  filter: grayscale(1) contrast(1.4) brightness(1.08) sepia(.08);
 }
 
 .glow {

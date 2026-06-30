@@ -1,0 +1,45 @@
+.nav {
+  position: fixed;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+.btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--th-border);
+  background: var(--th-nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--th-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: border-color .22s, color .22s, opacity .22s, transform .18s;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--green-mid);
+  color: var(--green-mid);
+  transform: scale(1.08);
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.btn:disabled {
+  opacity: .2;
+  cursor: default;
+}
+
+@media (max-width: 480px) {
+  .nav { display: none; }
+}

@@ -48,12 +48,6 @@ export default function Hero() {
           <div className={styles.fragFloat}>
             We help businesses uncover their story and build a digital
             presence people trust.
-            <a href="#cta" className={styles.heroCta}>
-              Book a Discovery Call
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="13" height="13">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
           </div>
         </div>
       </div>

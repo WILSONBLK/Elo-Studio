@@ -12,7 +12,7 @@ export default function About() {
           <div data-motion="scale-up" data-motion-delay="0">
             <div className={styles.portrait}>
               <Image
-                src="/founder.jpg"
+                src="/founder2.jpg"
                 alt="Elo, Founder of Elo's Studio"
                 fill
                 className={styles.portraitImg}
