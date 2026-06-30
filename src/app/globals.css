@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
-
 /* ─────────────────────────────────────
    DESIGN TOKENS
 ───────────────────────────────────── */
@@ -35,18 +33,39 @@
   --th-border-lt:   #EDE8E0;
   --th-label-muted: #7A6558;
   --th-logo:        #1C1209;
-  /* hero – light mode */
-  --hero-bg:        #E8D9B4;
-  --hero-ambient-1: rgba(200,140,50,.16);
-  --hero-ambient-2: rgba(180,100,30,.10);
-  --hero-heading:   #1C1209;
-  --hero-accent:    #8B5020;
-  --hero-sub:       rgba(58,36,20,.72);
-  --hero-kicker:    rgba(120,70,20,.65);
-  --hero-index:     rgba(120,70,20,.50);
-  --hero-link:      rgba(58,36,20,.55);
-  --hero-link-hover:rgba(58,36,20,.88);
-  --hero-scroll:    rgba(58,36,20,.22);
+  /* hero – always dark, #c8d4c0 sage green composition */
+  --hero-bg:        #060A07;
+  --hero-ambient-1: rgba(200,212,192,.42);
+  --hero-ambient-2: rgba(200,212,192,.28);
+  --hero-ambient-3: rgba(200,212,192,.15);
+  --hero-ambient-4: rgba(137,165,105,.22);
+  --hero-heading:   #F0E8DC;
+  --hero-accent:    #D4954A;
+  --hero-sub:       rgba(245,239,230,.52);
+  --hero-kicker:    rgba(200,175,120,.50);
+  --hero-index:     rgba(180,155,100,.42);
+  --hero-link:      rgba(245,239,230,.45);
+  --hero-link-hover:rgba(245,239,230,.85);
+  --hero-scroll:    rgba(245,239,230,.22);
+  /* ── section ambient gradients – light mode ── */
+  --prob-glow-1:    rgba(251,146,60,.08);
+  --prob-glow-2:    rgba(220,38,38,.05);
+  --appr-glow-1:    rgba(6,182,212,.16);
+  --appr-glow-2:    rgba(99,102,241,.11);
+  --work-glow-1:    rgba(16,185,129,.06);
+  --work-glow-2:    rgba(20,184,166,.04);
+  --crt-glow-1:     rgba(236,72,153,.06);
+  --crt-glow-2:     rgba(245,158,11,.04);
+  --about-glow-1:   rgba(245,158,11,.07);
+  --about-glow-2:   rgba(234,88,12,.04);
+  --proc-glow-1:    rgba(52,211,153,.14);
+  --proc-glow-2:    rgba(132,204,22,.07);
+  --story-glow-1:   rgba(167,139,250,.07);
+  --story-glow-2:   rgba(244,114,182,.05);
+  --cta-glow-1:     rgba(59,130,246,.18);
+  --cta-glow-2:     rgba(16,185,129,.14);
+  --foot-glow-1:    rgba(30,58,138,.08);
+  /* ── typography system — variables injected by next/font/google on <html> ── */
 }
 
 [data-theme="dark"] {
@@ -64,17 +83,37 @@
   --th-label-muted: #9A8070;
   --th-logo:        #F5EFE6;
   /* hero – dark mode */
-  --hero-bg:        #1C1007;
-  --hero-ambient-1: rgba(200,110,35,.20);
-  --hero-ambient-2: rgba(160,70,15,.12);
+  --hero-bg:        #030706;
+  --hero-ambient-1: rgba(200,212,192,.55);
+  --hero-ambient-2: rgba(200,212,192,.38);
+  --hero-ambient-3: rgba(200,212,192,.20);
+  --hero-ambient-4: rgba(137,165,105,.28);
+  /* section ambients – dark mode */
+  --prob-glow-1:    rgba(234,88,12,.22);
+  --prob-glow-2:    rgba(185,28,28,.16);
+  --appr-glow-1:    rgba(6,182,212,.24);
+  --appr-glow-2:    rgba(99,102,241,.17);
+  --work-glow-1:    rgba(16,185,129,.16);
+  --work-glow-2:    rgba(20,184,166,.12);
+  --crt-glow-1:     rgba(236,72,153,.16);
+  --crt-glow-2:     rgba(245,158,11,.10);
+  --about-glow-1:   rgba(217,119,6,.20);
+  --about-glow-2:   rgba(234,88,12,.12);
+  --proc-glow-1:    rgba(52,211,153,.20);
+  --proc-glow-2:    rgba(132,204,22,.10);
+  --story-glow-1:   rgba(124,58,237,.25);
+  --story-glow-2:   rgba(219,39,119,.15);
+  --cta-glow-1:     rgba(59,130,246,.24);
+  --cta-glow-2:     rgba(16,185,129,.18);
+  --foot-glow-1:    rgba(30,58,138,.16);
   --hero-heading:   #F5EFE6;
   --hero-accent:    #D4954A;
-  --hero-sub:       rgba(245,239,230,.72);
-  --hero-kicker:    rgba(210,155,80,.55);
-  --hero-index:     rgba(210,155,80,.42);
+  --hero-sub:       rgba(245,239,230,.58);
+  --hero-kicker:    rgba(200,175,120,.55);
+  --hero-index:     rgba(180,155,100,.46);
   --hero-link:      rgba(245,239,230,.50);
   --hero-link-hover:rgba(245,239,230,.88);
-  --hero-scroll:    rgba(245,239,230,.20);
+  --hero-scroll:    rgba(245,239,230,.22);
 }
 
 /* ─────────────────────────────────────
@@ -83,7 +122,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;
+  font-family:var(--font-body);font-size:16px;line-height:1.7;
   color:var(--th-body);background:var(--th-bg);
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
   transition:background .3s ease,color .3s ease;
@@ -102,10 +141,10 @@ section{padding:8rem 0;scroll-margin-top:70px}
 /* ─────────────────────────────────────
    TYPOGRAPHY HELPERS
 ───────────────────────────────────── */
-.label{font-family:'DM Mono',monospace;font-size:.75rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--green-mid);display:block;margin-bottom:1rem}
+.label{font-family:var(--font-mono);font-size:.75rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--green-mid);display:block;margin-bottom:1rem}
 .label-inv{color:var(--green-sage)}
 .label-muted{color:var(--th-label-muted)}
-.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,3.8vw,3.2rem);line-height:1.15;letter-spacing:-.025em;color:var(--th-heading)}
+.section-title{font-family:var(--font-display);font-size:clamp(2.2rem,3.8vw,3.2rem);font-weight:600;line-height:1.15;letter-spacing:-.01em;color:var(--th-heading)}
 .section-title em{font-style:italic;color:var(--green-forest)}
 .title-inv{color:#F5EFE6}
 .title-inv em{color:var(--green-sage)}
@@ -146,18 +185,40 @@ section{padding:8rem 0;scroll-margin-top:70px}
   0%,100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(45,122,82,0); }
   50%      { transform: scale(1.3); box-shadow: 0 0 0 4px rgba(45,122,82,.2); }
 }
+@keyframes float-global-a {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes float-global-b {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
 
 /* ─────────────────────────────────────
-   REVEAL ANIMATIONS
+   MOTION SYSTEM — initial hidden states
+   Set synchronously via .js class (added before first paint) so elements
+   are never visible before GSAP's useEffect positions them correctly.
 ───────────────────────────────────── */
-.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
-.js .reveal.in{opacity:1;transform:translateY(0)}
-.reveal-d1{transition-delay:.1s}
-.reveal-d2{transition-delay:.2s}
-.reveal-d3{transition-delay:.3s}
+.js [data-motion]                  { opacity: 0 }
+/* clip-path types stay opacity:1 — the clip itself hides them */
+.js [data-motion="clip-left"]      { opacity: 1; clip-path: inset(0 100% 0 0) }
+.js [data-motion="clip-bottom"]    { opacity: 1; clip-path: inset(100% 0 0 0) }
 @media(prefers-reduced-motion:reduce){
-  .js .reveal,.js .reveal-d1,.js .reveal-d2,.js .reveal-d3{opacity:1!important;transform:none!important;transition:none!important}
+  .js [data-motion]{ opacity:1 !important; transform:none !important; clip-path:none !important }
 }
+
+/* ─────────────────────────────────────
+   SKIP LINK
+───────────────────────────────────── */
+.skip-link {
+  position: absolute; top: -100%; left: 1rem;
+  background: var(--green-mid); color: #FBF8F4;
+  padding: .5rem 1rem; z-index: 9999;
+  font-size: .875rem; font-weight: 500;
+  border-radius: 0 0 4px 4px;
+  transition: top .1s;
+}
+.skip-link:focus { top: 0; }
 
 /* ─────────────────────────────────────
    THEME TOGGLE
@@ -174,11 +235,9 @@ section{padding:8rem 0;scroll-margin-top:70px}
 .btt.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
 .btt:hover{background:var(--green-dark)}
 
-/* hero outline button override for light mode */
-#hero .btn-outline-inv{color:var(--hero-heading);border-color:rgba(58,36,20,.22)}
-#hero .btn-outline-inv:hover{border-color:rgba(58,36,20,.55)}
-[data-theme="dark"] #hero .btn-outline-inv{color:#F5EFE6;border-color:rgba(245,239,230,.25)}
-[data-theme="dark"] #hero .btn-outline-inv:hover{border-color:rgba(245,239,230,.6)}
+/* hero is always dark — use light text/border in both modes */
+#hero .btn-outline-inv{color:#F5EFE6;border-color:rgba(245,239,230,.25)}
+#hero .btn-outline-inv:hover{border-color:rgba(245,239,230,.6)}
 
 /* ─────────────────────────────────────
    RESPONSIVE

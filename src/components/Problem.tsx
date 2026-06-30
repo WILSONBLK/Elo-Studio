@@ -11,21 +11,23 @@ const pairs = [
 export default function Problem() {
   return (
     <section id="problem" className={styles.section}>
-      <div className="container">
+      <div className={styles.ambient} aria-hidden="true" data-parallax="slow" />
+      <div className={styles.inner}>
+        <div className="container">
         <div className={styles.grid}>
           <div>
-            <span className="label reveal">The Problem</span>
-            <h2 className="section-title reveal reveal-d1">
+            <span className="label" data-motion="from-left" data-motion-delay="0">The Problem</span>
+            <h2 className="section-title" data-motion="from-top" data-motion-delay="0.1">
               Most Businesses Are<br /><em>Understood Poorly.</em>
             </h2>
-            <div className="rule reveal reveal-d1" />
-            <p className={`${styles.intro} reveal reveal-d2`}>
+            <div className="rule" data-motion="clip-left" data-motion-delay="0.22" />
+            <p className={styles.intro} data-motion="from-bottom" data-motion-delay="0.3">
               Many companies have <strong>years of experience</strong>, unique values, remarkable
               journeys, and incredible work.<br /><br />
               Yet their websites communicate none of it.<br /><br />
               Visitors see services. They never see the story.
             </p>
-            <div className={`${styles.pullquote} reveal reveal-d3`}>
+            <div className={styles.pullquote} data-motion="from-right" data-motion-delay="0.44">
               <blockquote>
                 A website that doesn't tell your story isn't a digital presence — it's a digital
                 brochure.
@@ -34,15 +36,23 @@ export default function Problem() {
             </div>
           </div>
 
-          <div className="reveal reveal-d2">
+          <div>
             <div className={styles.pairs}>
               {pairs.map(({ bad, good }, i) => (
-                <div key={i} className={styles.pair}>
-                  <div className={`${styles.col} ${styles.colBad}`}>
+                <div key={bad[0]} className={styles.pair}>
+                  <div
+                    className={`${styles.col} ${styles.colBad}`}
+                    data-motion="from-left"
+                    data-motion-delay={`${i * 0.07}`}
+                  >
                     <div className={styles.colHead}>{bad[0]}</div>
                     <p>{bad[1]}</p>
                   </div>
-                  <div className={`${styles.col} ${styles.colGood}`}>
+                  <div
+                    className={`${styles.col} ${styles.colGood}`}
+                    data-motion="from-right"
+                    data-motion-delay={`${i * 0.07 + 0.04}`}
+                  >
                     <div className={`${styles.colHead} ${styles.colHeadGood}`}>{good[0]}</div>
                     <p className={styles.goodText}>{good[1]}</p>
                   </div>
@@ -50,6 +60,7 @@ export default function Problem() {
               ))}
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

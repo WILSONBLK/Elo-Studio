@@ -14,7 +14,7 @@
 
 .logo {
   display: flex; align-items: center;
-  font-family: 'Inter', sans-serif; font-weight: 700;
+  font-family: var(--font-body); font-weight: 700;
   font-size: .95rem; letter-spacing: .06em; color: var(--th-logo);
 }
 .slash { font-weight: 300; font-size: 1.2rem; color: var(--green-mid); margin: 0 .08em; }
@@ -55,7 +55,7 @@
   z-index: 99; max-height: 0; overflow: hidden;
   transition: max-height .32s ease, padding .32s ease;
 }
-.mobileOpen { max-height: 450px; padding: .5rem 0 1.5rem; }
+.mobileOpen { max-height: 560px; padding: .5rem 0 1.5rem; }
 .mobileMenu a {
   display: block; padding: .8rem 2rem;
   font-size: .975rem; color: var(--th-muted);
@@ -67,8 +67,19 @@
   display: flex; align-items: center; gap: .75rem;
   padding: .8rem 2rem; font-size: .875rem; color: var(--th-muted);
   background: none; border: none; border-bottom: 1px solid var(--th-border-lt);
-  width: 100%; font-family: 'Inter', sans-serif;
+  width: 100%; font-family: var(--font-body);
 }
+
+.mobileSocial {
+  display: flex; gap: .75rem; padding: 1rem 2rem 0;
+}
+.mobileSocial a {
+  width: 36px; height: 36px; border: 1px solid var(--th-border-lt);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--th-muted); border-radius: 1px; transition: all .2s;
+  border-bottom: none !important;
+}
+.mobileSocial a:hover { border-color: var(--green-mid); color: var(--green-mid); }
 
 @media(max-width: 768px) {
   .links { display: none; }

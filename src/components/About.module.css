@@ -1,4 +1,15 @@
-.section { background: var(--th-bg); padding: 8rem 0; }
+.section { background: var(--th-bg); padding: 8rem 0; position: relative; overflow: hidden; }
+
+.ambient {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 62% 55% at 80% 30%, var(--about-glow-1) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 50% at 10% 70%, var(--about-glow-2) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 38% at 50% 5%, var(--about-glow-1) 0%, transparent 55%);
+  animation: amb-drift 38s ease-in-out infinite; animation-delay: -18s;
+}
+
+.inner { position: relative; z-index: 1; }
 
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center; }
 
@@ -24,22 +35,25 @@
 .portraitFooter { position: relative; z-index: 2; padding: 2rem; }
 
 .portraitName {
-  font-family: 'DM Serif Display', serif; font-size: 1.5rem;
+  font-family: var(--font-display); font-size: 1.5rem;
   color: #F5EFE6; margin-bottom: .2rem;
+  animation: float-global-a 9s ease-in-out infinite;
 }
 
 .portraitRole {
-  font-family: 'DM Mono', monospace; font-size: .72rem;
+  font-family: var(--font-mono); font-size: .72rem;
   letter-spacing: .15em; text-transform: uppercase; color: var(--green-sage);
 }
 
+.title { margin-bottom: 1.25rem; }
 .body { font-size: 1rem; color: var(--th-muted); line-height: 1.85; max-width: 48ch; margin-bottom: 1.25rem; }
 
 .ethos { background: var(--always-dark-bg); padding: 2rem 2.5rem; border-radius: 1px; margin: 2rem 0; }
 
 .ethosText {
-  font-family: 'DM Serif Display', serif; font-style: italic;
+  font-family: var(--font-display); font-style: italic;
   font-size: 1.15rem; color: #F5EFE6; line-height: 1.6;
+  animation: float-global-b 11s ease-in-out infinite; animation-delay: -5s;
 }
 .ethosText em { font-style: normal; color: var(--green-sage); }
 
@@ -55,14 +69,17 @@
 .stat:last-child { border-right: none; }
 
 .statNum {
-  font-family: 'DM Serif Display', serif; font-size: 1.75rem;
+  font-family: var(--font-display); font-size: 1.75rem;
   color: var(--th-heading); display: block; line-height: 1; margin-bottom: .3rem;
 }
 
 .statLabel {
-  font-family: 'DM Mono', monospace; font-size: .72rem;
+  font-family: var(--font-mono); font-size: .72rem;
   letter-spacing: .12em; text-transform: uppercase; color: var(--th-subtle);
 }
+
+.stat:nth-child(odd) .statNum { animation: float-global-a 7s ease-in-out infinite; animation-delay: -1s; }
+.stat:nth-child(even) .statNum { animation: float-global-b 8.5s ease-in-out infinite; animation-delay: -4.2s; }
 
 @media(max-width: 1024px) {
   .split   { grid-template-columns: 1fr; gap: 3.5rem; }

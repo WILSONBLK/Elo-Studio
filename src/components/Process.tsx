@@ -12,29 +12,37 @@ const phases = [
 export default function Process() {
   return (
     <section id="process" className={styles.section}>
-      <div className="container">
+      <div className={styles.ambient} aria-hidden="true" data-parallax="slow" />
+      <div className={styles.inner}>
+        <div className="container">
         <div className={styles.header}>
           <div>
-            <span className="label label-inv reveal">Featured Process</span>
-            <h2 className="section-title title-inv reveal reveal-d1">
+            <span className="label label-inv" data-motion="from-right" data-motion-delay="0">Our Process</span>
+            <h2 className="section-title title-inv" data-motion="from-top" data-motion-delay="0.1">
               From Understanding<br />to<br /><em>Digital Experience.</em>
             </h2>
-            <div className="rule rule-inv reveal reveal-d1" />
+            <div className="rule rule-inv" data-motion="clip-left" data-motion-delay="0.22" />
           </div>
-          <p className="body-p body-p-inv reveal reveal-d2">
+          <p className="body-p body-p-inv" data-motion="from-left" data-motion-delay="0.32">
             Six deliberate phases. Each one deepens our understanding of who you are before we
             build a single page — because clarity of identity is what makes great design possible.
           </p>
         </div>
 
-        <div className={`${styles.phases} reveal reveal-d1`}>
+        <div className={styles.phases}>
           {phases.map((p, i) => (
-            <div key={i} className={styles.phase}>
+            <div
+              key={p.title}
+              className={styles.phase}
+              data-motion="from-bottom"
+              data-motion-delay={`${i * 0.07}`}
+            >
               <span className={styles.num}>0{i + 1}</span>
               <div className={styles.title}>{p.title}</div>
               <p className={styles.body}>{p.body}</p>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>

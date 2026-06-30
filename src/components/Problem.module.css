@@ -1,4 +1,15 @@
-.section { background: var(--th-bg); }
+.section { background: var(--th-bg); position: relative; overflow: hidden; }
+
+.ambient {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 58% 52% at 84% 16%, var(--prob-glow-1) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 55% at 14% 82%, var(--prob-glow-2) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 35% at 60% 92%, var(--prob-glow-1) 0%, transparent 55%);
+  animation: amb-drift 30s ease-in-out infinite;
+}
+
+.inner { position: relative; z-index: 1; }
 
 .grid {
   display: grid; grid-template-columns: 1fr 1.25fr;
@@ -8,6 +19,7 @@
 .intro {
   font-size: 1.2rem; color: var(--th-body); line-height: 1.8;
   font-weight: 300; max-width: 46ch; margin: 2rem 0 3rem;
+  animation: float-global-a 8s ease-in-out infinite;
 }
 .intro strong { font-weight: 600; color: var(--th-heading); }
 
@@ -25,7 +37,7 @@
 .col p { font-size: .875rem; color: var(--th-muted); line-height: 1.65; }
 
 .colHead {
-  font-family: 'DM Mono', monospace; font-size: .58rem;
+  font-family: var(--font-mono); font-size: .58rem;
   letter-spacing: .15em; text-transform: uppercase;
   color: var(--th-subtle); margin-bottom: .6rem;
 }
@@ -41,18 +53,19 @@
   position: relative; overflow: hidden;
 }
 .pullquote::before {
-  content: '\201C'; font-family: 'DM Serif Display', serif;
+  content: '\201C'; font-family: var(--font-display);
   font-size: 8rem; line-height: 1; color: rgba(45,122,82,.12);
   position: absolute; top: -1rem; left: 1.5rem; pointer-events: none;
 }
 .pullquote blockquote {
-  font-family: 'DM Serif Display', serif; font-style: italic;
+  font-family: var(--font-display); font-style: italic;
   font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.6;
   color: #F5EFE6; position: relative; z-index: 1;
+  animation: float-global-b 10s ease-in-out infinite; animation-delay: -3.5s;
 }
 .pullquote cite {
   display: block; margin-top: 1.25rem;
-  font-family: 'DM Mono', monospace; font-size: .58rem;
+  font-family: var(--font-mono); font-size: .58rem;
   letter-spacing: .15em; text-transform: uppercase;
   color: var(--green-sage); font-style: normal;
 }

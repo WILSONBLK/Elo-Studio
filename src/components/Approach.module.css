@@ -1,4 +1,15 @@
-.section { background: var(--always-dark-bg); padding: 8rem 0; }
+.section { background: var(--always-dark-bg); padding: 8rem 0; position: relative; overflow: hidden; }
+
+.ambient {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 18% 20%, var(--appr-glow-1) 0%, transparent 62%),
+    radial-gradient(ellipse 52% 55% at 88% 80%, var(--appr-glow-2) 0%, transparent 60%),
+    radial-gradient(ellipse 35% 40% at 55% 48%, var(--appr-glow-1) 0%, transparent 68%);
+  animation: amb-drift 32s ease-in-out infinite; animation-delay: -8s;
+}
+
+.inner { position: relative; z-index: 1; }
 
 .header {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -25,13 +36,13 @@
 .step:hover::before { opacity: 1; }
 
 .num {
-  font-family: 'DM Mono', monospace; font-size: .58rem;
+  font-family: var(--font-mono); font-size: .58rem;
   letter-spacing: .15em; color: rgba(122,184,152,.6);
   margin-bottom: 1.5rem; display: block;
 }
 
 .title {
-  font-family: 'DM Serif Display', serif;
+  font-family: var(--font-display);
   font-size: .95rem; color: #F5EFE6; line-height: 1.3; margin-bottom: .5rem;
 }
 
@@ -45,6 +56,9 @@
   opacity: 1; width: 32px;
   animation: accent-shimmer 2s linear infinite;
 }
+
+.step:nth-child(odd) .title { animation: float-global-a 8s ease-in-out infinite; }
+.step:nth-child(even) .title { animation: float-global-b 9.5s ease-in-out infinite; animation-delay: -2.8s; }
 
 @media(max-width: 1024px) {
   .header { grid-template-columns: 1fr; gap: 2.5rem; }
