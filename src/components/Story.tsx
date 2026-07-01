@@ -6,12 +6,6 @@ const pillars = [
   { title: 'People Buy What They Understand', body: 'Confusion kills conversion. When someone fully understands what you do and why you do it, saying yes becomes easy.' },
 ]
 
-const truths = [
-  'Most visitors decide within seconds whether they trust a business. Story is what earns that trust.',
-  "Your competitors have services pages. A story-driven site gives you something they can never copy.",
-  "The right digital experience doesn't just inform — it moves people. It makes them feel something.",
-]
-
 // Pillars cycle through three distinct entrance directions
 const PILLAR_MOTIONS = ['rotate-left', 'float-fade', 'rotate-right'] as const
 
@@ -43,27 +37,6 @@ export default function Story() {
               <p className={styles.pillarBody}>{p.body}</p>
             </div>
           ))}
-        </div>
-
-        <div className={styles.truth}>
-          <div className={styles.truthHeadline} data-motion="from-left" data-motion-delay="0">
-            Your digital presence isn't just a marketing asset.<br />
-            It's the first chapter of a relationship —{' '}
-            <strong>and it should read like one.</strong>
-          </div>
-          <div className={styles.truthRight}>
-            {truths.map((t, i) => (
-              <div
-                key={t}
-                className={styles.truthPoint}
-                data-motion="from-right"
-                data-motion-delay={`${i * 0.09}`}
-              >
-                <div className={styles.dot} />
-                <p className={styles.truthText}>{t}</p>
-              </div>
-            ))}
-          </div>
         </div>
         </div>
       </div>

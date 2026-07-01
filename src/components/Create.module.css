@@ -28,10 +28,10 @@
 }
 
 .name {
-  font-family: var(--font-display); font-size: 1.2rem;
-  color: var(--th-heading); margin-bottom: .3rem;
+  font-family: var(--font-display); font-weight: 600; font-size: 1.3rem;
+  color: var(--th-heading); margin-bottom: .35rem;
 }
-.desc { font-size: .875rem; color: var(--th-muted); line-height: 1.65; }
+.desc { font-size: .95rem; color: var(--th-muted); line-height: 1.65; }
 
 .sidebar { position: sticky; top: 8rem; }
 

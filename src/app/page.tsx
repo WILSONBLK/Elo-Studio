@@ -1,7 +1,5 @@
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
-import Problem from '@/components/Problem'
-import Approach from '@/components/Approach'
 import Create from '@/components/Create'
 import Story from '@/components/Story'
 import Process from '@/components/Process'
@@ -19,8 +17,6 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
-        <Problem />
-        <Approach />
         <Create />
         <Story />
         <Process />

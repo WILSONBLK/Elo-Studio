@@ -22,7 +22,7 @@ export default function Nav() {
   }, [])
 
   useEffect(() => {
-    const ids = ['problem', 'approach', 'work', 'about']
+    const ids = ['story', 'process', 'work', 'about']
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -57,8 +57,8 @@ export default function Nav() {
 
           <div className={styles.right}>
             <ul className={styles.links}>
-              <li><a href="#problem" className={activeSection === 'problem' ? styles.active : ''}>The Problem</a></li>
-              <li><a href="#approach" className={activeSection === 'approach' ? styles.active : ''}>Approach</a></li>
+              <li><a href="#story" className={activeSection === 'story' ? styles.active : ''}>Story</a></li>
+              <li><a href="#process" className={activeSection === 'process' ? styles.active : ''}>Process</a></li>
               <li><a href="#work" className={activeSection === 'work' ? styles.active : ''}>Work</a></li>
               <li><a href="#about" className={activeSection === 'about' ? styles.active : ''}>About</a></li>
             </ul>
@@ -95,8 +95,7 @@ export default function Nav() {
 
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileOpen : ''}`} aria-hidden={!menuOpen}>
         {[
-          ['#problem', 'The Problem'],
-          ['#approach', 'Approach'],
+          ['#story', 'Story'],
           ['#create', 'What We Create'],
           ['#process', 'The Process'],
           ['#work', 'Work'],

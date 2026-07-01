@@ -1,8 +1,8 @@
 import styles from './Footer.module.css'
 
 const nav = [
-  { head: 'Navigate', links: [['#problem','The Problem'],['#approach','Our Approach'],['#create','What We Create'],['#process','The Process']] },
-  { head: 'Studio',   links: [['#work','Case Studies'],['#about','About Us'],['#story','Why Story Matters']] },
+  { head: 'Navigate', links: [['#story','Why Story Matters'],['#create','What We Create'],['#process','The Process']] },
+  { head: 'Studio',   links: [['#work','Case Studies'],['#about','About Us']] },
   { head: 'Contact',  links: [['mailto:mystudio.elo@gmail.com','mystudio.elo@gmail.com'],['https://wa.me/447480139388','WhatsApp us'],['https://www.linkedin.com/in/wilson-echetama-a49750248','Founder on LinkedIn'],['#cta','Book a Discovery Call']] },
 ]
 
