@@ -10,13 +10,14 @@ import About from '@/components/About'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 import BackToTop from '@/components/BackToTop'
-import RevealInit from '@/components/RevealInit'
+import MotionSystem from '@/components/MotionSystem'
+import SectionNav from '@/components/SectionNav'
 
 export default function Home() {
   return (
     <>
       <Nav />
-      <main>
+      <main id="main">
         <Hero />
         <Problem />
         <Approach />
@@ -29,7 +30,8 @@ export default function Home() {
       </main>
       <Footer />
       <BackToTop />
-      <RevealInit />
+      <SectionNav />
+      <MotionSystem />
     </>
   )
 }

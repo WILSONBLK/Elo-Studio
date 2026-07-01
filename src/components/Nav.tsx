@@ -7,6 +7,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
     const saved = localStorage.getItem('elos-theme')
@@ -18,6 +19,23 @@ export default function Nav() {
     const onScroll = () => setScrolled(window.scrollY > 10)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const ids = ['problem', 'approach', 'work', 'about']
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id)
+        })
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    )
+    ids.forEach(id => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+    return () => observer.disconnect()
   }, [])
 
   const toggleTheme = useCallback(() => {
@@ -39,10 +57,10 @@ export default function Nav() {
 
           <div className={styles.right}>
             <ul className={styles.links}>
-              <li><a href="#problem">The Problem</a></li>
-              <li><a href="#approach">Approach</a></li>
-              <li><a href="#work">Work</a></li>
-              <li><a href="#about">About</a></li>
+              <li><a href="#problem" className={activeSection === 'problem' ? styles.active : ''}>The Problem</a></li>
+              <li><a href="#approach" className={activeSection === 'approach' ? styles.active : ''}>Approach</a></li>
+              <li><a href="#work" className={activeSection === 'work' ? styles.active : ''}>Work</a></li>
+              <li><a href="#about" className={activeSection === 'about' ? styles.active : ''}>About</a></li>
             </ul>
 
             <button
@@ -67,7 +85,7 @@ export default function Nav() {
           <button
             className={`${styles.hamburger} ${menuOpen ? styles.open : ''}`}
             onClick={() => setMenuOpen(o => !o)}
-            aria-label="Open menu"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
           >
             <span /><span /><span />
@@ -97,6 +115,26 @@ export default function Nav() {
           {theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
         </button>
         <a href="#cta" onClick={closeMenu}>Book a Discovery Call →</a>
+        <div className={styles.mobileSocial}>
+          <a href="https://www.instagram.com/mystudio.elo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="16" height="16">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/mystudioelo/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="16" height="16">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+              <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/447480139388" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="16" height="16">
+              <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </>
   )

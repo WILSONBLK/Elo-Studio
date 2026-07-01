@@ -1,4 +1,15 @@
-.section { background: var(--always-green-sec); padding: 8rem 0; }
+.section { background: var(--always-green-sec); padding: 8rem 0; position: relative; overflow: hidden; }
+
+.ambient {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 55% at 85% 15%, var(--proc-glow-1) 0%, transparent 62%),
+    radial-gradient(ellipse 50% 55% at 10% 80%, var(--proc-glow-2) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 45% at 48% 52%, var(--proc-glow-1) 0%, transparent 70%);
+  animation: amb-drift 28s ease-in-out infinite; animation-delay: -11s;
+}
+
+.inner { position: relative; z-index: 1; }
 
 .header {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -29,17 +40,20 @@
 }
 
 .num {
-  font-family: 'DM Mono', monospace; font-size: .58rem;
+  font-family: var(--font-mono); font-size: .58rem;
   letter-spacing: .15em; color: rgba(122,184,152,.35);
   margin-bottom: 1.75rem; display: block;
 }
 
 .title {
-  font-family: 'DM Serif Display', serif; font-size: 1.2rem;
+  font-family: var(--font-display); font-size: 1.2rem;
   color: #F5EFE6; line-height: 1.25; margin-bottom: .5rem;
 }
 
 .body { font-size: .78rem; color: rgba(196,222,206,.7); line-height: 1.65; }
+
+.phase:nth-child(odd) .title { animation: float-global-a 8.5s ease-in-out infinite; animation-delay: -3s; }
+.phase:nth-child(even) .title { animation: float-global-b 10s ease-in-out infinite; animation-delay: -6.5s; }
 
 @media(max-width: 1024px) {
   .header  { grid-template-columns: 1fr; gap: 2.5rem; }

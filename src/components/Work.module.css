@@ -1,4 +1,15 @@
-.section { background: var(--th-bg-alt); padding: 8rem 0; }
+.section { background: var(--th-bg-alt); padding: 8rem 0; position: relative; overflow: hidden; }
+
+.ambient {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 55% 50% at 10% 25%, var(--work-glow-1) 0%, transparent 62%),
+    radial-gradient(ellipse 48% 52% at 90% 70%, var(--work-glow-2) 0%, transparent 60%),
+    radial-gradient(ellipse 38% 42% at 50% 95%, var(--work-glow-1) 0%, transparent 58%);
+  animation: amb-drift 34s ease-in-out infinite; animation-delay: -14s;
+}
+
+.inner { position: relative; z-index: 1; }
 
 .header {
   display: flex; align-items: flex-end; justify-content: space-between;
@@ -21,28 +32,28 @@
   display: flex; align-items: flex-start; justify-content: space-between;
   flex-direction: column;
 }
-.caseNum  { font-family: 'DM Mono', monospace; font-size: .74rem; letter-spacing: .15em; color: var(--th-subtle); }
-.caseYear { font-family: 'DM Mono', monospace; font-size: .74rem; letter-spacing: .1em;  color: var(--th-subtle); }
+.caseNum  { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .15em; color: var(--th-subtle); }
+.caseYear { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .1em;  color: var(--th-subtle); }
 
 .caseMain { padding: 3rem 2.5rem; border-right: 1px solid var(--th-border); }
 
 .tag {
   display: inline-block;
-  font-family: 'DM Mono', monospace; font-size: .72rem;
+  font-family: var(--font-mono); font-size: .72rem;
   letter-spacing: .12em; text-transform: uppercase;
   color: var(--green-mid); border: 1px solid var(--border-green);
   padding: .3rem .7rem; border-radius: 1px; margin-bottom: 1.25rem;
 }
 
 .name {
-  font-family: 'DM Serif Display', serif; font-size: 1.55rem;
+  font-family: var(--font-display); font-size: 1.55rem;
   color: var(--th-heading); line-height: 1.2; margin-bottom: .75rem;
 }
 
 .challenge { font-size: .9rem; color: var(--th-muted); line-height: 1.75; max-width: 52ch; }
 
 .story {
-  font-family: 'DM Serif Display', serif; font-style: italic;
+  font-family: var(--font-display); font-style: italic;
   font-size: .95rem; color: var(--green-dark); line-height: 1.65;
   margin-top: 1.25rem; padding-top: 1.25rem;
   border-top: 1px solid var(--th-border-lt); max-width: 50ch;
@@ -63,18 +74,21 @@
 }
 
 .clientType {
-  font-family: 'DM Mono', monospace; font-size: .72rem;
+  font-family: var(--font-mono); font-size: .72rem;
   letter-spacing: .12em; text-transform: uppercase;
   color: var(--th-subtle); margin-bottom: .5rem;
 }
 .clientName {
-  font-family: 'DM Serif Display', serif; font-size: 1.1rem;
+  font-family: var(--font-display); font-size: 1.1rem;
   color: var(--th-heading);
 }
 .outcome {
   font-size: .82rem; color: var(--th-muted); line-height: 1.65;
   padding-top: 1.5rem; border-top: 1px solid var(--th-border-lt); margin-top: auto;
 }
+
+.case:nth-child(odd) .name { animation: float-global-a 9s ease-in-out infinite; }
+.case:nth-child(even) .name { animation: float-global-b 11s ease-in-out infinite; animation-delay: -4.5s; }
 
 @media(max-width: 1024px) {
   .case       { grid-template-columns: 1fr; }

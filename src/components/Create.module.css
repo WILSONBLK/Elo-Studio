@@ -1,7 +1,18 @@
-.section { background: var(--th-bg-alt); }
+.section { background: var(--th-bg-alt); position: relative; }
+
+.ambient {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 55% 50% at 85% 18%, var(--crt-glow-1) 0%, transparent 62%),
+    radial-gradient(ellipse 42% 50% at 12% 72%, var(--crt-glow-2) 0%, transparent 60%);
+  animation: amb-drift 36s ease-in-out infinite; animation-delay: -5s;
+}
+
+.inner { position: relative; z-index: 1; }
 
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
 
+.intro { margin-bottom: 2.5rem; }
 .list { display: flex; flex-direction: column; gap: 0; margin-top: 2rem; }
 
 .item {
@@ -11,13 +22,13 @@
 .item:first-child { border-top: 1px solid var(--th-border); }
 
 .num {
-  font-family: 'DM Mono', monospace; font-size: .74rem;
+  font-family: var(--font-mono); font-size: .74rem;
   letter-spacing: .1em; color: var(--th-subtle);
   flex-shrink: 0; padding-top: .15rem; width: 1.75rem;
 }
 
 .name {
-  font-family: 'DM Serif Display', serif; font-size: 1.2rem;
+  font-family: var(--font-display); font-size: 1.2rem;
   color: var(--th-heading); margin-bottom: .3rem;
 }
 .desc { font-size: .875rem; color: var(--th-muted); line-height: 1.65; }
@@ -32,9 +43,8 @@
 
 .founderImg {
   object-fit: cover;
-  object-position: center 18%;
-  transform: scale(1.1);
-  transform-origin: center 20%;
+  object-position: center 22%;
+  filter: grayscale(1) contrast(1.4) brightness(1.08) sepia(.08);
 }
 
 .glow {
@@ -45,15 +55,19 @@
 .visualText { position: relative; z-index: 2; padding: 2.5rem; }
 
 .quote {
-  font-family: 'DM Serif Display', serif; font-style: italic;
+  font-family: var(--font-display); font-style: italic;
   font-size: 1.45rem; line-height: 1.45; color: #F5EFE6; opacity: .8;
+  animation: float-global-b 11s ease-in-out infinite; animation-delay: -7s;
 }
 
 .attr {
-  font-family: 'DM Mono', monospace; font-size: .72rem;
+  font-family: var(--font-mono); font-size: .72rem;
   letter-spacing: .15em; text-transform: uppercase;
   color: var(--green-sage); margin-top: .75rem; opacity: .55;
 }
+
+.item:nth-child(odd) .name { animation: float-global-a 7.5s ease-in-out infinite; }
+.item:nth-child(even) .name { animation: float-global-b 9s ease-in-out infinite; animation-delay: -3.5s; }
 
 @media(max-width: 1024px) {
   .grid    { grid-template-columns: 1fr; gap: 3rem; }

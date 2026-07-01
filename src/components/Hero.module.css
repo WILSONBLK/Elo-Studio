@@ -1,21 +1,23 @@
 .hero {
-  padding: 0; min-height: 100vh;
+  min-height: 100vh;
   background: var(--hero-bg);
-  display: flex; flex-direction: column; justify-content: flex-end;
-  position: relative; overflow: hidden;
-  transition: background .3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .ambient {
   position: absolute; inset: 0; pointer-events: none;
   background:
-    radial-gradient(ellipse 60% 55% at 75% 20%, var(--hero-ambient-1) 0%, transparent 65%),
-    radial-gradient(ellipse 45% 50% at 15% 80%, var(--hero-ambient-2) 0%, transparent 60%);
-  animation: amb-drift 22s ease-in-out infinite;
+    radial-gradient(ellipse 65% 52% at 80% 10%, var(--hero-ambient-1) 0%, transparent 62%),
+    radial-gradient(ellipse 55% 60% at 16% 84%, var(--hero-ambient-2) 0%, transparent 58%),
+    radial-gradient(ellipse 42% 46% at 50% 50%, var(--hero-ambient-4) 0%, transparent 68%),
+    radial-gradient(ellipse 28% 34% at 88% 75%, var(--hero-ambient-3) 0%, transparent 55%),
+    radial-gradient(ellipse 22% 28% at 8% 12%, var(--hero-ambient-3) 0%, transparent 58%);
+  animation: amb-drift 26s ease-in-out infinite;
 }
 
 .grain {
-  position: absolute; inset: 0; pointer-events: none; opacity: .04;
+  position: absolute; inset: 0; pointer-events: none; opacity: .045;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 200px 200px;
 }
@@ -23,11 +25,11 @@
 .top {
   position: absolute; top: 0; left: 0; right: 0;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 2.5rem 2rem;
+  padding: 2.5rem 2rem; z-index: 10;
 }
 
 .kicker {
-  font-family: 'DM Mono', monospace; font-size: .76rem;
+  font-family: var(--font-mono); font-size: .76rem;
   letter-spacing: .22em; text-transform: uppercase;
   color: var(--hero-kicker);
 }
@@ -36,59 +38,219 @@
 .topLinks a { font-size: .9rem; color: var(--hero-link); transition: color .2s; }
 .topLinks a:hover { color: var(--hero-link-hover); }
 
-.content {
-  position: relative; z-index: 2;
-  padding: 0 2rem 7rem;
+/* ─── Scene ─── */
+.scene {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
 }
 
-.index {
-  font-family: 'DM Mono', monospace; font-size: .75rem;
-  letter-spacing: .2em; color: var(--hero-index);
-  margin-bottom: 3rem;
+/* ─── Logo ─── */
+.logoWrap {
+  position: relative; z-index: 5;
+  display: flex; align-items: center; justify-content: center;
 }
 
-.headline {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(2.8rem, 5.5vw, 5.2rem);
-  line-height: 1.06; letter-spacing: -.04em;
-  color: var(--hero-heading); max-width: 18ch; margin-bottom: 2rem;
-}
-.headline em { font-style: italic; color: var(--hero-accent); }
-
-.body {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 4rem; align-items: flex-end; margin-top: 3.5rem;
+.logoGlow {
+  position: absolute; width: 520px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(200,212,192,.16) 0%, rgba(200,212,192,.08) 55%, transparent 70%);
+  filter: blur(64px); pointer-events: none;
 }
 
-.sub {
-  font-size: 1.1rem; color: var(--hero-sub);
-  line-height: 1.8; max-width: 44ch;
+.logoMark {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 1; letter-spacing: -.02em;
+  display: flex; align-items: center;
+  position: relative; z-index: 1;
 }
 
-.actions { display: flex; flex-direction: column; align-items: flex-end; gap: 1.75rem; }
-
-.btnRow {
-  display: flex; align-items: center; gap: .875rem;
-  flex-wrap: wrap; justify-content: flex-end;
+.logoElo {
+  color: var(--green-deep);
 }
 
-.scroll {
-  font-family: 'DM Mono', monospace; font-size: .72rem;
-  letter-spacing: .18em; text-transform: uppercase;
-  color: var(--hero-scroll); display: flex; align-items: center; gap: .6rem;
+.logoSlash {
+  font-size: 2.2em; line-height: 1;
+  font-weight: 300;
+  color: var(--green-forest); margin: 0 .1em;
+  position: relative; top: .08em;
 }
 
-.scrollLine { width: 32px; height: 1px; background: var(--hero-scroll); display: block; }
+.logoSub {
+  font-size: .6204em; font-weight: 400;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--green-forest);
+}
 
-@media(max-width: 1024px) {
-  .body { grid-template-columns: 1fr; gap: 2rem; }
-  .actions { align-items: flex-start; }
-  .scroll { display: none; }
+/* ─── Fragments ─── */
+.frag {
+  position: absolute; z-index: 3;
 }
-@media(max-width: 768px) {
-  .btnRow { flex-direction: column; align-items: flex-start; }
-  .headline { font-size: clamp(2.4rem, 7vw, 3.2rem); }
+
+.fragFloat { will-change: transform; }
+
+/* h1 reset — removes UA size/weight/margin when fragFloat is an h1 */
+.fragB h1.fragFloat {
+  font-size: inherit;
+  font-weight: 400;
+  margin: 0;
+  line-height: inherit;
+  letter-spacing: inherit;
 }
-@media(max-width: 480px) {
+
+/* Hero CTA button */
+.heroCta {
+  display: inline-flex; align-items: center; gap: .45rem;
+  margin-top: 1.4rem;
+  font-family: var(--font-body); font-size: .78rem; font-weight: 500;
+  letter-spacing: .03em;
+  background: var(--green-mid); color: #FBF8F4;
+  border: 1.5px solid var(--green-mid);
+  padding: .7rem 1.4rem; border-radius: 1px;
+  transition: background .22s, border-color .22s;
+}
+.heroCta:hover { background: var(--green-dark); border-color: var(--green-dark); }
+
+/* A — top-right: index label */
+.fragA {
+  top: 11%; right: 11%;
+  transform: perspective(700px) rotateX(14deg) rotateY(-10deg);
+}
+.fragA .fragFloat { animation: floatA 6.5s ease-in-out infinite; }
+
+/* B — top-left: headline part 1 */
+.fragB {
+  top: 16%; left: 7%;
+  transform: perspective(700px) rotateX(10deg) rotateY(8deg);
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  line-height: 1.18; letter-spacing: -.025em;
+  color: var(--hero-heading);
+}
+.fragB .fragFloat { animation: floatB 8s ease-in-out infinite; animation-delay: -1.2s; }
+
+/* C — bottom-right: italic headline part 2 */
+.fragC {
+  bottom: 20%; right: 7%;
+  transform: perspective(700px) rotateX(-10deg) rotateY(-9deg);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.9rem);
+  font-style: italic; line-height: 1.2; letter-spacing: -.02em;
+  color: var(--hero-accent); text-align: right;
+}
+.fragC .fragFloat { animation: floatC 9s ease-in-out infinite; animation-delay: -3.5s; }
+
+/* D — bottom-left: sub paragraph */
+.fragD {
+  bottom: 14%; left: 7%;
+  transform: perspective(700px) rotateX(-7deg) rotateY(7deg);
+  font-size: .88rem; color: var(--hero-sub);
+  line-height: 1.8; max-width: 28ch;
+}
+.fragD .fragFloat { animation: floatD 10.5s ease-in-out infinite; animation-delay: -5s; }
+
+.indexLabel {
+  font-family: var(--font-mono); font-size: .71rem;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--hero-index);
+}
+
+/* ─── Scroll indicator ─── */
+.scrollIndicator {
+  position: absolute; bottom: 5.5rem;
+  left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: .5rem;
+  z-index: 10;
+}
+
+.scrollText {
+  font-family: var(--font-mono); font-size: .62rem;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--hero-kicker); opacity: .55;
+}
+
+.scrollArrow {
+  color: var(--hero-kicker); opacity: .45;
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+/* ─── Marquee ticker ─── */
+.marqueeBar {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  overflow: hidden; z-index: 10;
+  border-top: 1px solid rgba(255,255,255,.07);
+  padding: .7rem 0;
+  background: rgba(0,0,0,.15);
+  backdrop-filter: blur(4px);
+}
+
+.marqueeTrack {
+  display: flex; width: max-content;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .marqueeTrack { animation: marquee-scroll 34s linear infinite; }
+}
+
+.marqueeText {
+  font-family: var(--font-mono); font-size: .6rem;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--hero-kicker); opacity: .48;
+  white-space: nowrap;
+}
+
+/* ─── Keyframes ─── */
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: .45; }
+  50%       { transform: translateY(5px); opacity: .7; }
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes floatA {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes floatB {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-15px); }
+}
+@keyframes floatC {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes floatD {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-9px); }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1100px) {
+  .fragA { top: 10%; right: 5%; }
+  .fragB { top: 14%; left: 4%; }
+  .fragC { bottom: 16%; right: 4%; }
+  .fragD { bottom: 10%; left: 4%; }
+}
+
+@media (max-width: 768px) {
+  .scene {
+    position: relative; inset: auto;
+    min-height: 100vh; flex-direction: column;
+    align-items: flex-start; justify-content: center;
+    padding: 8rem 1.5rem 7rem; gap: 2.5rem;
+  }
+  .frag { position: static; transform: none !important; }
+  .frag .fragFloat { animation: none; }
+  .logoWrap { align-self: center; margin: 1.5rem 0; }
+  .fragC { text-align: right; align-self: flex-end; }
+  .fragD { max-width: 40ch; }
+  .scrollIndicator { bottom: 4.5rem; }
+}
+
+@media (max-width: 480px) {
   .topLinks { display: none; }
+  .logoMark { font-size: clamp(2.2rem, 8vw, 3.5rem); }
 }

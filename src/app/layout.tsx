@@ -1,5 +1,28 @@
 import type { Metadata } from 'next'
+import { Cormorant_Garamond, Jost, DM_Mono } from 'next/font/google'
 import './globals.css'
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
+const jost = Jost({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-body',
+  display: 'swap',
+})
+
+const dmMono = DM_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "Elo's Studio — We Help Businesses Tell Their Story",
@@ -11,9 +34,16 @@ export const metadata: Metadata = {
       'We uncover your story, clarify your identity, and transform it into a digital presence people trust.',
     type: 'website',
     url: 'https://elos.studio/',
+    images: [{ url: 'https://elos.studio/og-image.png', width: 1200, height: 630 }],
   },
-  twitter: { card: 'summary_large_image' },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://elos.studio/og-image.png'],
+  },
   robots: 'index, follow',
+  alternates: {
+    canonical: 'https://elos.studio/',
+  },
 }
 
 export default function RootLayout({
@@ -22,7 +52,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" data-theme="light" className="no-js">
+    <html
+      lang="en"
+      data-theme="light"
+      className={`no-js ${cormorant.variable} ${jost.variable} ${dmMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         {/* Runs synchronously before first paint — sets theme + enables JS reveal class */}
         <script
@@ -40,7 +75,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <a href="#main" className="skip-link">Skip to main content</a>
+        {children}
+      </body>
     </html>
   )
 }

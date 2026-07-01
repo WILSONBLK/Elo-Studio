@@ -2,7 +2,18 @@
   background: var(--always-dark-alt);
   border-top: 1px solid var(--border-dark);
   padding: 4rem 0 2rem;
+  position: relative; overflow: hidden;
 }
+
+.ambient {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 55% 60% at 12% 30%, var(--foot-glow-1) 0%, transparent 62%),
+    radial-gradient(ellipse 40% 45% at 88% 70%, var(--foot-glow-1) 0%, transparent 58%);
+  animation: amb-drift 44s ease-in-out infinite; animation-delay: -28s;
+}
+
+.inner { position: relative; z-index: 1; }
 
 .top {
   display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
@@ -12,8 +23,9 @@
 
 .logo {
   display: flex; align-items: center;
-  font-family: 'Inter', sans-serif; font-weight: 700;
+  font-family: var(--font-body); font-weight: 700;
   font-size: .9rem; letter-spacing: .06em; color: #F5EFE6; margin-bottom: 1rem;
+  animation: float-global-b 12s ease-in-out infinite; animation-delay: -4s;
 }
 .slash { font-weight: 300; font-size: 1.1rem; color: var(--green-mid); margin: 0 .08em; }
 .sub   { font-weight: 400; font-size: .68rem; letter-spacing: .16em; color: rgba(245,239,230,.5); }
@@ -29,7 +41,7 @@
 .social a:hover { border-color: var(--green-forest); color: var(--green-sage); }
 
 .colHead {
-  font-family: 'DM Mono', monospace; font-size: .58rem;
+  font-family: var(--font-mono); font-size: .58rem;
   letter-spacing: .18em; text-transform: uppercase;
   color: var(--green-sage); margin-bottom: 1.25rem; opacity: .55;
 }
