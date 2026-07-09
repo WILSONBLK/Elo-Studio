@@ -76,7 +76,7 @@ const concepts = [
       desc: 'Focused on links. Designed for redirection.',
     },
     digital: {
-      label: "What a founder's digital home looks like",
+      label: "Your digital home",
       desc: 'Focused on knowledge. Designed for discovery.',
     },
     problem: 'A link-in-bio collects links. It cannot collect years of knowledge, recommendations, and evolving setups — the real value Mattia had built.',

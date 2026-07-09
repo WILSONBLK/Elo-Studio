@@ -280,3 +280,6 @@ section{padding:8rem 0;scroll-margin-top:70px}
   section{padding:5.5rem 0}
   .container{padding:0 1.25rem}
 }
+@media(max-width:480px){
+  .btn-home{font-size:.75rem;padding:.95rem 1.6rem;letter-spacing:.03em}
+}

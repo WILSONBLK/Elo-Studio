@@ -41,7 +41,7 @@ export default function WhyItMatters() {
             ))}
           </div>
           <div className={`${styles.col} ${styles.colRight}`}>
-            <p className={styles.colHead}>Founder's Digital Home</p>
+            <p className={styles.colHead}>Your Digital Home</p>
             {right.map(item => (
               <div key={item} className={styles.row}>
                 <span className={styles.check} aria-hidden="true">✦</span>

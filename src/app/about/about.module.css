@@ -263,7 +263,14 @@
 }
 @media(max-width: 768px) {
   .split { grid-template-columns: 1fr; gap: 2rem; }
-  .hero { padding: 10rem 0 6rem; }
-  .belief, .what, .who, .founder, .cta { padding: 6rem 0; }
-  .philosophy { padding: 7rem 0; }
+  .hero { padding: 8rem 0 5rem; }
+  .belief, .what, .who, .founder, .cta { padding: 5rem 0; }
+  .philosophy { padding: 6rem 0; }
+  .headline { font-size: 2.2rem; }
+  .whatIntro { font-size: 1.25rem; }
+}
+@media(max-width: 480px) {
+  .hero { padding: 7rem 0 4rem; }
+  .belief, .what, .who, .founder, .cta { padding: 4rem 0; }
+  .philosophy { padding: 5rem 0; }
 }

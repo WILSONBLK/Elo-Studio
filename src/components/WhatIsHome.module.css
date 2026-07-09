@@ -134,5 +134,13 @@
 
 @media(max-width: 768px) {
   .answer { grid-template-columns: 1fr; gap: 1.5rem; }
-  .section { padding: 7rem 0; }
+  .section { padding: 6rem 0; }
+  .headline { font-size: 2rem; }
+  .intro { margin-bottom: 3rem; }
+  .scattered { padding: 2rem 0; margin-bottom: 3rem; }
+  .questions { margin-bottom: 3rem; }
+}
+@media(max-width: 480px) {
+  .section { padding: 5rem 0; }
+  .answerText { font-size: 1rem; }
 }
