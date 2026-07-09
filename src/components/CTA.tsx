@@ -15,8 +15,8 @@ export default function CTA() {
           business and what your digital presence could become.
         </p>
         <div className={styles.btns} data-motion="scale-up" data-motion-delay="0.42">
-          <a href="https://wa.me/447480139388" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-            Start the Conversation
+          <a href="https://wa.me/447480139388" target="_blank" rel="noopener noreferrer" className="btn btn-home">
+            Build Your Digital Home
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="14" height="14">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>

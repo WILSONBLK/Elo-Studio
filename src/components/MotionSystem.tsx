@@ -123,24 +123,23 @@ export default function MotionSystem() {
       // Position element in its "from" state immediately
       gsap.set(el, def.from)
 
-      // ── Enter: element scrolls in from below
+      // ── Enter: element scrolls in from below; stays visible once in
       const enterST = ScrollTrigger.create({
         trigger: el,
-        start: 'top 88%',
+        start: 'top 90%',
         onEnter: () => {
           gsap.to(el, {
             ...def.to,
-            duration: def.dur,
+            duration: def.dur * 0.75,
             ease: def.ease,
             delay,
             overwrite: 'auto',
           })
         },
-        // Reverse entrance when scrolling back up past the start point
         onLeaveBack: () => {
           gsap.to(el, {
             ...def.from,
-            duration: def.dur * 0.5,
+            duration: def.dur * 0.4,
             ease: def.exitEase,
             delay: 0,
             overwrite: 'auto',
@@ -148,32 +147,7 @@ export default function MotionSystem() {
         },
       })
 
-      // ── Exit: element scrolls out at the top
-      const exitST = ScrollTrigger.create({
-        trigger: el,
-        start: 'bottom 10%',
-        onEnter: () => {
-          gsap.to(el, {
-            ...def.exit,
-            duration: def.exitDur,
-            ease: def.exitEase,
-            delay: 0,
-            overwrite: 'auto',
-          })
-        },
-        // Reverse exit when scrolling back down
-        onLeaveBack: () => {
-          gsap.to(el, {
-            ...def.to,
-            duration: def.dur * 0.6,
-            ease: def.ease,
-            delay: 0,
-            overwrite: 'auto',
-          })
-        },
-      })
-
-      triggers.push(enterST, exitST)
+      triggers.push(enterST)
     })
 
     // ── Ambient parallax elements (data-parallax="slow"|"medium")

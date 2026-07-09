@@ -35,9 +35,9 @@ export default function About() {
             <div className="rule" data-motion="clip-left" data-motion-delay="0.22" />
 
             <p className={styles.body} data-motion="from-bottom" data-motion-delay="0.3">
-              Elo's Studio is a strategic storytelling and digital presence studio. We don't start
-              with templates — we start with conversations, and build a digital presence that
-              reflects who you really are.
+              Elo Studio is a digital homes studio. We don't start
+              with templates — we start with your story, and build a living digital ecosystem that
+              reflects who you really are and grows with you.
             </p>
 
             <div className={styles.ethos} data-motion="from-right" data-motion-delay="0.28">

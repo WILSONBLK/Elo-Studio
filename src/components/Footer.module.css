@@ -16,19 +16,36 @@
 .inner { position: relative; z-index: 1; }
 
 .top {
-  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr;
   gap: 4rem; padding-bottom: 3rem; margin-bottom: 2rem;
   border-bottom: 1px solid var(--border-dark);
 }
 
 .logo {
-  display: flex; align-items: center;
-  font-family: var(--font-body); font-weight: 700;
-  font-size: .9rem; letter-spacing: .06em; color: #F5EFE6; margin-bottom: 1rem;
+  display: flex; align-items: center; line-height: 1;
+  font-size: 1rem; margin-bottom: 1rem;
   animation: float-global-b 12s ease-in-out infinite; animation-delay: -4s;
 }
-.slash { font-weight: 300; font-size: 1.1rem; color: var(--green-mid); margin: 0 .08em; }
-.sub   { font-weight: 400; font-size: .68rem; letter-spacing: .16em; color: rgba(245,239,230,.5); }
+.logoElo {
+  font-family: var(--font-body); font-size: 1em; font-weight: 800;
+  letter-spacing: -.04em; color: #F5EFE6; line-height: 1;
+}
+.logoSlashWrap {
+  display: flex; align-items: center; align-self: stretch; padding: 0 .22em;
+}
+.logoSlash {
+  display: block; width: .08em; height: 1.55em;
+  background: var(--green-sage); transform: rotate(12deg);
+  transform-origin: center; border-radius: 1px;
+}
+.logoStudioWrap {
+  display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: .05em;
+}
+.logoStudio {
+  font-family: var(--font-body); font-size: .32em; font-weight: 500;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(245,239,230,.55); white-space: nowrap; line-height: 1;
+}
 
 .desc { font-size: .85rem; color: rgba(245,239,230,.52); line-height: 1.7; }
 

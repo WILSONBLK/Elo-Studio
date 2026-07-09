@@ -1,0 +1,138 @@
+.section {
+  background: var(--th-bg);
+  padding: 10rem 0;
+  border-top: 1px solid var(--th-border-lt);
+}
+
+.intro { margin-bottom: 4rem; }
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+  color: var(--th-heading);
+  max-width: 22ch;
+}
+.headline em { font-style: italic; color: var(--green-forest); }
+[data-theme="dark"] .headline em { color: var(--green-sage); }
+
+/* Scattered presence pills */
+.scattered {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+  padding: 3rem 0;
+  border-top: 1px solid var(--th-border-lt);
+  border-bottom: 1px solid var(--th-border-lt);
+  margin-bottom: 4rem;
+}
+
+.scatteredItem {
+  font-size: .9rem;
+  color: var(--th-body);
+  background: var(--th-bg-alt);
+  border: 1px solid var(--th-border);
+  padding: .5rem 1.1rem;
+  border-radius: 100px;
+  font-weight: 500;
+}
+
+.scatteredConclusion {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--th-heading);
+  font-weight: 600;
+  margin-left: .5rem;
+}
+
+/* Discovery questions */
+.questions {
+  padding: 2.5rem 0 3rem;
+  border-bottom: 1px solid var(--th-border-lt);
+  margin-bottom: 4rem;
+}
+
+.questionsLabel {
+  font-size: .88rem;
+  color: var(--th-muted);
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+
+.questionsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-bottom: 1.25rem;
+}
+
+.questionItem {
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--th-heading);
+  background: var(--th-bg-alt);
+  border: 1px solid var(--th-border);
+  padding: .45rem 1rem;
+  border-radius: 100px;
+}
+
+.questionsConclude {
+  font-size: .95rem;
+  color: var(--th-muted);
+  font-style: italic;
+}
+
+/* Answer row */
+.answer {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.answerLabel {
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--green-forest);
+  padding-top: .3rem;
+}
+[data-theme="dark"] .answerLabel { color: var(--green-sage); }
+
+.answerText {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: var(--th-body);
+  line-height: 1.8;
+  max-width: 56ch;
+}
+.answerText em { font-style: normal; color: var(--th-heading); font-weight: 600; }
+
+.ownItBox {
+  display: inline;
+  font-weight: 700;
+  color: var(--th-heading);
+  border: 2px solid var(--green-forest);
+  border-radius: 6px;
+  padding: .1em .4em;
+  white-space: nowrap;
+}
+
+@media(max-width: 768px) {
+  .answer { grid-template-columns: 1fr; gap: 1.5rem; }
+  .section { padding: 7rem 0; }
+}
