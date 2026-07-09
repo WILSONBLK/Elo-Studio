@@ -116,7 +116,6 @@
   height: auto;
   display: block;
   object-fit: cover;
-  mix-blend-mode: multiply;
 }
 
 /* Comparison row */
