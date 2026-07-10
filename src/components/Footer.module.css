@@ -47,7 +47,8 @@
   color: rgba(245,239,230,.55); white-space: nowrap; line-height: 1;
 }
 
-.desc { font-size: .85rem; color: rgba(245,239,230,.52); line-height: 1.7; }
+.desc { font-size: .85rem; color: rgba(245,239,230,.52); line-height: 1.7; margin-bottom: .5rem; }
+.location { font-size: .75rem; color: rgba(245,239,230,.35); letter-spacing: .04em; margin-top: .25rem; }
 
 .social { display: flex; gap: .5rem; margin-top: 1.5rem; }
 .social a {

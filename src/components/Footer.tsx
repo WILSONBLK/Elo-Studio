@@ -26,6 +26,7 @@ export default function Footer() {
               A digital homes studio. We help founders, creators, and businesses
               build one place that tells their story, organises their work, and earns trust.
             </p>
+            <p className={styles.location}>📍 UK &amp; Nigeria · Working globally</p>
             <div className={styles.social}>
               {/* LinkedIn */}
               <a href="https://www.linkedin.com/company/mystudioelo/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">

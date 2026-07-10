@@ -20,9 +20,10 @@
   --green-vivid:  #3A8A5A;
   --green-sage:   #6BA882;
   --green-pale:   #C4D5BF;
-  --always-dark-bg:   #0C1410;
-  --always-dark-alt:  #0A120E;
-  --always-green-sec: #0E1C14;
+  /* light-mode "dark" sections — rich forest green, not near-black */
+  --always-dark-bg:   #183222;
+  --always-dark-alt:  #122A1A;
+  --always-green-sec: #1A3828;
   --border-dark:      #1A2A1E;
   --border-green:     rgba(45,122,82,.3);
   /* light theme */
@@ -75,19 +76,26 @@
 }
 
 [data-theme="dark"] {
-  --th-bg:          #111A11;
-  --th-bg-alt:      #182018;
-  --th-surface:     #1E281E;
-  --th-nav-bg:      rgba(17,26,17,.97);
-  --th-nav-border:  #243024;
-  --th-heading:     #EEF5EE;
-  --th-body:        #C8D8C8;
-  --th-muted:       #9DB89D;
-  --th-subtle:      #6A826A;
-  --th-border:      #2A382A;
-  --th-border-lt:   #1E281E;
-  --th-label-muted: #7A927A;
-  --th-logo:        #EEF5EE;
+  /* section backgrounds — more distinct from each other */
+  --th-bg:          #0D1710;
+  --th-bg-alt:      #162218;
+  --th-surface:     #1C2A1C;
+  --th-nav-bg:      rgba(13,23,16,.97);
+  --th-nav-border:  #1E2E20;
+  /* text — warm sage tint instead of cold near-white */
+  --th-heading:     #E8F5E8;
+  --th-body:        #B8D4B8;
+  --th-muted:       #8AAA8A;
+  --th-subtle:      #5A785A;
+  /* borders — more visible */
+  --th-border:      #253828;
+  --th-border-lt:   #1A2C1C;
+  --th-label-muted: #6A926A;
+  --th-logo:        #E8F5E8;
+  /* dark sections — deep but with visible forest-green hue */
+  --always-dark-bg:   #080F0A;
+  --always-dark-alt:  #060C08;
+  --always-green-sec: #0A1610;
   /* hero – dark mode */
   --hero-bg:        #030706;
   --hero-ambient-1: rgba(200,212,192,.55);
@@ -277,9 +285,11 @@ section{padding:8rem 0;scroll-margin-top:70px}
    RESPONSIVE
 ───────────────────────────────────── */
 @media(max-width:768px){
-  section{padding:5.5rem 0}
-  .container{padding:0 1.25rem}
+  section{padding:4.5rem 0}
+  .container{padding:0 1.1rem}
 }
 @media(max-width:480px){
+  section{padding:3.5rem 0}
+  .container{padding:0 1rem}
   .btn-home{font-size:.75rem;padding:.95rem 1.6rem;letter-spacing:.03em}
 }

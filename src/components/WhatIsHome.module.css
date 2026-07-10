@@ -134,13 +134,32 @@
 
 @media(max-width: 768px) {
   .answer { grid-template-columns: 1fr; gap: 1.5rem; }
-  .section { padding: 6rem 0; }
+  .section { padding: 5rem 0; }
   .headline { font-size: 2rem; }
-  .intro { margin-bottom: 3rem; }
-  .scattered { padding: 2rem 0; margin-bottom: 3rem; }
-  .questions { margin-bottom: 3rem; }
+  .intro { margin-bottom: 2.5rem; }
+  .scattered { padding: 2rem 0; margin-bottom: 2.5rem; gap: .5rem; }
+  .questions { margin-bottom: 2.5rem; padding: 2rem 0 2.5rem; }
 }
 @media(max-width: 480px) {
-  .section { padding: 5rem 0; }
+  .section { padding: 4rem 0; }
   .answerText { font-size: 1rem; }
+  /* Organise pills into a tidy 2-column grid */
+  .scattered {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+    align-items: start;
+  }
+  .scatteredConclusion {
+    grid-column: 1 / -1;
+    margin-left: 0;
+    margin-top: .25rem;
+  }
+  .scatteredItem { text-align: center; }
+  .questionsList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .45rem;
+  }
+  .questionItem { text-align: center; font-size: .82rem; }
 }
