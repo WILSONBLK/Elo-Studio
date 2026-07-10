@@ -2,13 +2,11 @@ import Image from 'next/image'
 import styles from './Create.module.css'
 
 const items = [
-  { title: 'Digital Storytelling Websites', desc: 'Full websites built around your narrative — your why, your journey, your philosophy, your work.' },
-  { title: 'Founder Profiles', desc: 'Digital presences built for the person — for executives, consultants, and thought leaders.' },
-  { title: 'Brand Narratives', desc: 'The articulation of what a brand believes, how it began, and why it exists.' },
-  { title: 'Project Showcases', desc: 'Portfolio and case study systems that show the story behind the work, not just the outcome.' },
-  { title: 'Company Timelines', desc: 'Visual histories of how a company evolved — a powerful trust-building tool.' },
-  { title: 'Digital Portfolios', desc: 'Curated presentations of creative and professional work — designed with intention.' },
-  { title: 'Trust-Building Content Systems', desc: 'Editorial systems — blogs, insights, articles — that communicate expertise over time.' },
+  { title: 'Digital Storytelling Websites', desc: 'Full websites built around your narrative.' },
+  { title: 'Founder Profiles', desc: 'Digital presences built for the person, not just the business.' },
+  { title: 'Brand Narratives', desc: 'What your brand believes, and why it exists.' },
+  { title: 'Project Showcases', desc: 'Case studies that show the story behind the work.' },
+  { title: 'Trust-Building Content', desc: 'Editorial systems that build expertise over time.' },
 ]
 
 export default function Create() {

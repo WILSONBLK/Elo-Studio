@@ -3,30 +3,27 @@ import styles from './Work.module.css'
 const cases = [
   {
     num: '001', year: '2024', tag: 'Interior Design', name: 'Vixx Interiors',
-    challenge: 'The founder had fifteen years of extraordinary work and a deep philosophy about space, light, and how interiors shape how people feel. None of it was visible online. The website listed services.',
-    story: 'We spent three weeks in deep conversation — learning the founder\'s design philosophy, her early influences, her vision for what interior design could mean for a client\'s life. The result was a site that felt like stepping into her world before ever meeting her.',
+    story: 'The founder had fifteen years of extraordinary work and a deep design philosophy, but her website just listed services. We spent three weeks learning her story and rebuilt the site to open with her philosophy — so visitors understand who she is before they see what she does.',
     link: 'https://vixxinteriors.com',
     clientType: 'Founder-led studio',
     clientName: 'Vixx Interiors',
-    outcome: 'The site now opens with her philosophy — not her services. Visitors understand who she is before they see what she does.',
+    outcome: 'Visitors now understand who she is before they see what she does.',
   },
   {
     num: '002', year: '2025', tag: 'Urban Mobility', name: 'Ejago',
-    challenge: 'A product built for a real, underserved need — affordable premium bikes for Nigerian urban life — presented online like any other bike shop. The income-earning angle, which changed the entire value proposition, was almost invisible.',
-    story: 'We rebuilt the narrative around the dual promise at Ejago\'s core: not just a way to move, but a way to earn. Every section was structured to help young urban Nigerians see a bike as a financial decision — flexible ownership, delivery gig work, a better daily life.',
+    story: 'Ejago sells affordable premium bikes for Nigerian urban life, but its income-earning angle — the thing that changed the entire value proposition — was invisible online. We rebuilt the site around that dual promise: not just a way to move, but a way to earn.',
     link: 'https://www.ejago.ng',
     clientType: 'Consumer startup',
     clientName: 'Ejago',
-    outcome: 'The site now leads with the income opportunity, not the product specs. Visitors arrive understanding what a bike can change — not just what it costs.',
+    outcome: 'The site now leads with the income opportunity, not the product specs.',
   },
   {
     num: '003', year: '2025', tag: 'Informal Commerce', name: 'Ulahia',
-    challenge: 'Millions of small shop owners across Nigeria track their books in their heads, on scraps of paper, or not at all. Ulahia built a simple solution for them — but the product\'s plainness was both its greatest strength and its hardest thing to communicate.',
-    story: 'We had to speak to people who\'ve never used accounting software and don\'t want to. The language couldn\'t sound like tech. Every word had to feel like relief — like someone finally understood their problem and fixed it without asking them to change how they work.',
+    story: 'Ulahia built a simple bookkeeping tool for small shop owners who\'ve never used accounting software and don\'t want to. We rewrote the site so every word felt like relief, not tech — the answer to a problem, not another piece of software to learn.',
     link: 'https://ulahia.vercel.app',
     clientType: 'Product startup',
     clientName: 'Ulahia',
-    outcome: 'A product that now presents itself honestly: not "accounting software" — but the answer to a problem 90% of small sellers in Nigeria live with every day.',
+    outcome: 'A product that now presents itself as a fix, not "accounting software."',
   },
 ]
 
@@ -64,7 +61,6 @@ export default function Work() {
               <div className={styles.caseMain}>
                 <span className={styles.tag}>{c.tag}</span>
                 <div className={styles.name}>{c.name}</div>
-                <p className={styles.challenge}>{c.challenge}</p>
                 <p className={styles.story}>{c.story}</p>
                 {c.link && (
                   <a href={c.link} target="_blank" rel="noopener noreferrer" className={styles.link}>

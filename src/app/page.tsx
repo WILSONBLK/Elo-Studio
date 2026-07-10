@@ -1,17 +1,13 @@
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
-import Problem from '@/components/Problem'
-import Approach from '@/components/Approach'
-import Create from '@/components/Create'
-import Story from '@/components/Story'
-import Process from '@/components/Process'
-import Work from '@/components/Work'
-import About from '@/components/About'
-import CTA from '@/components/CTA'
+import WhatIsHome from '@/components/WhatIsHome'
+import WhyItMatters from '@/components/WhyItMatters'
+import TheEcosystem from '@/components/TheEcosystem'
+import FeaturedConcepts from '@/components/FeaturedConcepts'
+import Closing from '@/components/Closing'
 import Footer from '@/components/Footer'
 import BackToTop from '@/components/BackToTop'
 import MotionSystem from '@/components/MotionSystem'
-import SectionNav from '@/components/SectionNav'
 
 export default function Home() {
   return (
@@ -19,18 +15,14 @@ export default function Home() {
       <Nav />
       <main id="main">
         <Hero />
-        <Problem />
-        <Approach />
-        <Create />
-        <Story />
-        <Process />
-        <Work />
-        <About />
-        <CTA />
+        <WhatIsHome />
+        <WhyItMatters />
+        <TheEcosystem />
+        <FeaturedConcepts />
+        <Closing />
       </main>
       <Footer />
       <BackToTop />
-      <SectionNav />
       <MotionSystem />
     </>
   )

@@ -25,13 +25,13 @@ const dmMono = DM_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Elo's Studio — We Help Businesses Tell Their Story",
+  title: "Elo Studio — Digital Homes Studio",
   description:
-    "Elo's Studio is a strategic storytelling and digital presence studio. We help founders, businesses, and brands uncover their story, clarify their identity, and build a digital presence that creates trust.",
+    "Elo Studio is a digital homes studio. We help founders, creators, and businesses move beyond having just a website — and build a structured, living digital ecosystem that tells their story, organises their work, and turns trust into opportunity.",
   openGraph: {
-    title: "Elo's Studio — We Help Businesses Tell Their Story",
+    title: "Elo Studio — Digital Homes Studio",
     description:
-      'We uncover your story, clarify your identity, and transform it into a digital presence people trust.',
+      'We build digital homes — structured, living ecosystems that tell your story, organise your work, and turn trust into opportunity.',
     type: 'website',
     url: 'https://elos.studio/',
     images: [{ url: 'https://elos.studio/og-image.png', width: 1200, height: 630 }],

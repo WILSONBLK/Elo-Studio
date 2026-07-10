@@ -3,7 +3,7 @@
 import { useEffect, useRef, useCallback } from 'react'
 import styles from './SectionNav.module.css'
 
-const SECTIONS = ['hero', 'problem', 'approach', 'create', 'story', 'process', 'work', 'about', 'cta']
+const SECTIONS = ['hero', 'create', 'story', 'process', 'work', 'about', 'cta']
 const LAST = SECTIONS.length - 1
 
 function easeInOutQuart(t: number) {

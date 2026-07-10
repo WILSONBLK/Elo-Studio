@@ -50,15 +50,9 @@
   color: var(--th-heading); line-height: 1.2; margin-bottom: .75rem;
 }
 
-.challenge { font-size: .9rem; color: var(--th-muted); line-height: 1.75; max-width: 52ch; }
-
 .story {
-  font-family: var(--font-display); font-style: italic;
-  font-size: .95rem; color: var(--green-dark); line-height: 1.65;
-  margin-top: 1.25rem; padding-top: 1.25rem;
-  border-top: 1px solid var(--th-border-lt); max-width: 50ch;
+  font-size: 1rem; color: var(--th-body); line-height: 1.75; max-width: 52ch;
 }
-[data-theme="dark"] .story { color: var(--green-sage); }
 
 .link {
   display: inline-flex; align-items: center; gap: .4rem;
@@ -83,7 +77,7 @@
   color: var(--th-heading);
 }
 .outcome {
-  font-size: .82rem; color: var(--th-muted); line-height: 1.65;
+  font-size: .92rem; color: var(--th-body); line-height: 1.65;
   padding-top: 1.5rem; border-top: 1px solid var(--th-border-lt); margin-top: auto;
 }
 

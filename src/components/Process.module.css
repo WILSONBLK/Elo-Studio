@@ -17,13 +17,13 @@
 }
 
 .phases {
-  display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.06); border-radius: 1px; overflow: hidden;
 }
 
 .phase {
-  padding: 2.5rem 1.5rem; background: var(--always-green-sec);
+  padding: 2.5rem 2rem; background: var(--always-green-sec);
   transition: background .25s; position: relative;
 }
 .phase:hover { background: rgba(255,255,255,.04); }
@@ -46,11 +46,11 @@
 }
 
 .title {
-  font-family: var(--font-display); font-size: 1.2rem;
-  color: #F5EFE6; line-height: 1.25; margin-bottom: .5rem;
+  font-family: var(--font-display); font-weight: 600; font-size: 1.35rem;
+  color: #F5EFE6; line-height: 1.25; margin-bottom: .6rem;
 }
 
-.body { font-size: .78rem; color: rgba(196,222,206,.7); line-height: 1.65; }
+.body { font-size: .95rem; color: rgba(215,232,222,.82); line-height: 1.7; }
 
 .phase:nth-child(odd) .title { animation: float-global-a 8.5s ease-in-out infinite; animation-delay: -3s; }
 .phase:nth-child(even) .title { animation: float-global-b 10s ease-in-out infinite; animation-delay: -6.5s; }

@@ -35,14 +35,9 @@ export default function About() {
             <div className="rule" data-motion="clip-left" data-motion-delay="0.22" />
 
             <p className={styles.body} data-motion="from-bottom" data-motion-delay="0.3">
-              Elo's Studio is a strategic storytelling and digital presence studio. We help
-              founders, businesses, creatives, and professionals uncover their story, communicate
-              their value, and build a digital presence that creates genuine trust.
-            </p>
-            <p className={styles.body} data-motion="from-bottom" data-motion-delay="0.38">
-              We are not a traditional web design agency. We don't start with templates or colour
-              palettes. We start with conversations, questions, and a deep curiosity about the
-              human beings and businesses we work with.
+              Elo Studio is a digital homes studio. We don't start
+              with templates — we start with your story, and build a living digital ecosystem that
+              reflects who you really are and grows with you.
             </p>
 
             <div className={styles.ethos} data-motion="from-right" data-motion-delay="0.28">
@@ -52,12 +47,6 @@ export default function About() {
                 it justice."
               </div>
             </div>
-
-            <p className={styles.body} data-motion="from-bottom" data-motion-delay="0.46">
-              Every client is a collaboration. Every project begins with understanding. Every
-              website we build is a reflection of a real identity — not a constructed marketing
-              persona.
-            </p>
 
             <div className={styles.stats}>
               {[

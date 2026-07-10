@@ -1,9 +1,8 @@
 import styles from './Footer.module.css'
 
 const nav = [
-  { head: 'Navigate', links: [['#problem','The Problem'],['#approach','Our Approach'],['#create','What We Create'],['#process','The Process']] },
-  { head: 'Studio',   links: [['#work','Case Studies'],['#about','About Us'],['#story','Why Story Matters']] },
-  { head: 'Contact',  links: [['mailto:mystudio.elo@gmail.com','mystudio.elo@gmail.com'],['https://wa.me/447480139388','WhatsApp us'],['https://www.linkedin.com/in/wilson-echetama-a49750248','Founder on LinkedIn'],['#cta','Book a Discovery Call']] },
+  { head: 'Studio',   links: [['/concepts','Concepts'],['/about','About'],['/contact','Contact']] },
+  { head: 'Connect',  links: [['mailto:mystudio.elo@gmail.com','mystudio.elo@gmail.com'],['https://wa.me/447480139388','WhatsApp'],['https://www.linkedin.com/in/wilson-echetama-a49750248','LinkedIn']] },
 ]
 
 export default function Footer() {
@@ -14,13 +13,20 @@ export default function Footer() {
         <div className="container">
         <div className={styles.top}>
           <div data-motion="from-left" data-motion-delay="0">
-            <div className={styles.logo}>
-              ELO<span className={styles.slash}>/</span><span className={styles.sub}>STUDIO</span>
+            <div className={styles.logo} aria-label="Elo Studio">
+              <span className={styles.logoElo}>ELO</span>
+              <span className={styles.logoSlashWrap} aria-hidden="true">
+                <span className={styles.logoSlash} />
+              </span>
+              <span className={styles.logoStudioWrap}>
+                <span className={styles.logoStudio}>STUDIO</span>
+              </span>
             </div>
             <p className={styles.desc}>
-              A strategic storytelling and digital presence studio. We help businesses
-              communicate who they are, not just what they sell.
+              A digital homes studio. We help founders, creators, and businesses
+              build one place that tells their story, organises their work, and earns trust.
             </p>
+            <p className={styles.location}>📍 UK &amp; Nigeria · Working globally</p>
             <div className={styles.social}>
               {/* LinkedIn */}
               <a href="https://www.linkedin.com/company/mystudioelo/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
